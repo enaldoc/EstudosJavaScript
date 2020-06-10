@@ -1,0 +1,26 @@
+let prom = new Promise((resolve, reject) => {
+  let num = Math.random();
+  if (num < .5 ){
+    resolve('Yay!');
+  } else {
+    reject('Ohhh noooo!');
+  }
+});
+
+const handleSuccess = (resolvedValue) => {
+  console.log(resolvedValue);
+};
+
+const handleFailure = (rejectionReason) => {
+  console.log(rejectionReason);
+};
+
+prom.then(handleSuccess, handleFailure);
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||
+basicamente temos nossa promessa que pode resolver ou rejeitar.
+
+tambem temos nossa handles que simplesmente imprimem o que é passado como argumento para o resolvido e o rejeitado
+
+por fim, chamamos o then() pela promessa e passamos os dois handles como argumento do then() e esse vai executar o handle
+correspondente ao resultado da promessa. 
