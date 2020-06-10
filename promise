@@ -8,7 +8,7 @@ const inventory = {
 
 
 
-// Write your code below:
+// aqui temos a funcação executora padrão
 
 const myExecutor = (resolve, reject) => {
   if (inventory.sunglasses > 0){
@@ -19,16 +19,15 @@ const myExecutor = (resolve, reject) => {
 
 }
 
+//funcao que cria uma nova promise passando a func executora e retorna essa promise
 
 function orderSunglasses(){
   const myPromise =  new Promise(myExecutor);
   return myPromise
 }
 
+//chamaos a funcao e botamos o resultado numa variavel orderPromise
 let orderPromise = orderSunglasses();
 
+//printa o resultado
 console.log(orderPromise);
-
-
-
-|||||||||||||||||||||||||||||||||||||||||||||
